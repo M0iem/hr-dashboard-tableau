@@ -1,35 +1,81 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Employees HR Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .dashboard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        img {
+            max-width: 90%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        iframe, tableau-viz {
+            width: 1200px;   /* taille pour desktop */
+            height: 800px;   /* hauteur adaptée */
+            border: none;
+        }
+
+        .link-public {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .link-public a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        .link-public a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
 <h1>Employees HR Dashboard</h1>
 
-<!-- Tableau embed -->
-<script type="module"
-  src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js">
-</script>
+<div class="dashboard-container">
 
-<tableau-viz
-  id="tableauViz"
-  src="https://public.tableau.com/views/HR_17672564383170/EmployeesHR"
-  width="100%"
-  height="800">
-</tableau-viz>
+    <!-- Image -->
+    <img src="Employees HR.png" alt="Employees HR">
 
-<hr>
+    <!-- Tableau Embed -->
+    <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+    <tableau-viz
+        id="tableauViz"
+        src="https://public.tableau.com/views/HR_17672564383170/EmployeesHR"
+        width="1200px"
+        height="800px">
+    </tableau-viz>
 
-<!-- Image + clickable link -->
-<a href="https://public.tableau.com/app/profile/meriem.yafir/viz/HR_17672564383170/EmployeesHR" target="_blank">
-    <img src="Employees HR.png" alt="Employees HR Dashboard" style="width:100%; max-width:800px; display:block; margin:auto;">
-</a>
+    <!-- Link Tableau Public -->
+    <div class="link-public">
+        View interactive dashboard on Tableau Public: 
+        <a href="https://public.tableau.com/app/profile/meriem.yafir/viz/HR_17672564383170/EmployeesHR" target="_blank">
+            Click Here
+        </a>
+    </div>
 
-<p style="text-align:center;">
-    Click the image above to view the dashboard on Tableau Public
-</p>
+</div>
 
 </body>
 </html>
